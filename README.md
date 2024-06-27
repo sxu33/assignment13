@@ -11,5 +11,5 @@ docker run --name xu_shaozhuo_coding_assignment12 -d -p 8083:8083 xu_shaozhuo_co
 
 
 Once the container is running, you can access the application in your web browser at:
-[http://localhost:8083](http://localhost:8083)
-" > README.md
+http://localhost:8083
+```

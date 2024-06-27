@@ -1,18 +1,20 @@
-FROM node:14
+# Use the official Node.js image as the base image
+FROM node:18-alpine
 
-WORKDIR /usr/src/app/shaozhuo_xu_ui_garden
+# Set the working directory
+WORKDIR /usr/src/shaozhuo_xu_ui_garden
 
+# Copy package.json and package-lock.json files
 COPY package*.json ./
 
+# Install dependencies
 RUN npm install
-RUN npm install --save-dev @types/styled-components
 
+# Copy the project files
 COPY . .
 
-RUN npm run build
-
-RUN npm install -g serve
-
+# Expose port 8083
 EXPOSE 8083
 
-CMD ["npm", "start"]
+# Start Storybook
+CMD ["npm", "run", "storybook"]
