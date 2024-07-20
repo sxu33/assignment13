@@ -22,7 +22,7 @@
     "storybook": "storybook dev -p 8083",
     "build-storybook": "storybook build",
     "format": "prettier --write .",
-     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
     "lint:fix": "eslint --fix .",
     "prepare": "husky install"
   },
@@ -51,6 +51,7 @@
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@chromatic-com/storybook": "^1.5.0",
+    "@eslint/compat": "^1.1.1",
     "@eslint/js": "^9.7.0",
     "@storybook/addon-essentials": "^8.1.10",
     "@storybook/addon-interactions": "^8.1.10",
@@ -85,12 +86,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  
   "lint-staged": {
-     "*.{js,jsx,ts}": [
+    "*.{js,jsx,ts}": [
       "eslint --fix",
       "prettier --write"
     ],
-   "*.{js,jsx,ts,tsx}": [
+    
+    "*.{js,jsx,ts,tsx}": [
       "npm run test -- --bail --findRelatedTests"
     ]
   }
