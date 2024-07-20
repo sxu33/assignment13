@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expose port 8083
-EXPOSE 8083
+EXPOSE 8018
 
 # Start Storybook
 CMD ["npm", "run", "storybook"]
