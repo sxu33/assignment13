@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 
 export interface DropdownProps {
   options: string[];
@@ -8,13 +8,13 @@ export interface DropdownProps {
   onChange?: (value: string) => void;
 }
 
-const StyledSelect = styled.select<Pick<DropdownProps, 'primary' | 'disabled'>>`
-  background-color: ${props => props.primary ? 'blue' : 'gray'};
+const StyledSelect = styled.select<Pick<DropdownProps, "primary" | "disabled">>`
+  background-color: ${(props) => (props.primary ? "blue" : "gray")};
   color: white;
   padding: 10px;
   border: none;
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
-  opacity: ${props => props.disabled ? 0.5 : 1};
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   width: 100%;
   max-width: 200px;
   @media (max-width: 600px) {
@@ -22,7 +22,12 @@ const StyledSelect = styled.select<Pick<DropdownProps, 'primary' | 'disabled'>>`
   }
 `;
 
-const Dropdown: React.FC<DropdownProps> = ({ options, primary = false, disabled, onChange }) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  options,
+  primary = false,
+  disabled,
+  onChange,
+}) => {
   const [isPrimary, setIsPrimary] = useState(primary);
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -35,8 +40,12 @@ const Dropdown: React.FC<DropdownProps> = ({ options, primary = false, disabled,
   };
 
   return (
-    <StyledSelect primary={isPrimary} disabled={disabled} onChange={handleChange}>
-      {options.map(option => (
+    <StyledSelect
+      primary={isPrimary}
+      disabled={disabled}
+      onChange={handleChange}
+    >
+      {options.map((option) => (
         <option key={option} value={option}>
           {option}
         </option>
